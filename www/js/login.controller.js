@@ -2,15 +2,14 @@ angular
     .module('azureADB2C')
     .controller('LoginController', function($scope, $state, $ionicPopup, jwtHelper, AdalService, HelloService, $ionicPlatform) {
 
+        // Initialize
         var isMobileDevice = ionic.Platform.isAndroid() || ionic.Platform.isIOS();
-
         $ionicPlatform.ready(function() {
             if (isMobileDevice) {
                 $scope.login = adalLogin;
                 $scope.logout = adalLogout;
             }
         });
-
         (function initialize() {
             if (!isMobileDevice) {
                 helloInitialize();
@@ -19,6 +18,7 @@ angular
             }
         })();
 
+        // Web Login and Logout using hello
         function helloInitialize() {
             HelloService.initialize().then(function(authResponse) {
                 displayUserDetails(getUserData(authResponse))
@@ -35,6 +35,7 @@ angular
             });
         }
 
+        // Mobile Login and Logout using ADAL plugin
         function adalLogin() {
             AdalService.login().then(function(authResponse) {
                 displayUserDetails(getUserData(authResponse));
@@ -57,7 +58,8 @@ angular
             });
         }
 
-        var getUserData = function(response) {
+        // Decode decode the token and diaplay the user details
+        function getUserData(response) {
             var user = {};
             user.token = response.access_token || response.token;
             var data = jwtHelper.decodeToken(user.token);
