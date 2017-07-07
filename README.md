@@ -23,3 +23,20 @@ More info on this can be found on the Ionic [Getting Started](http://ionicframew
 
 ## Issues
 Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
+
+
+
+Azure AD - Help secure AngularJS single-page apps by using Azure AD
+https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-devquickstarts-angular
+
+Azure AD B2C: Single-page app sign-in by using OAuth 2.0 implicit flow
+https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-spa
+https://github.com/Azure-Samples/active-directory-b2c-javascript-hellojs-singlepageapp
+
+Active Directory Authentication Library (ADAL) plugin for Apache Cordova apps:
+https://github.com/AzureAD/azure-activedirectory-library-for-cordova
+
+ADAL Cordova Plugin Patch For B2C:
+https://github.com/jospete/azure-activedirectory-library-for-cordova
+
+cordova plugin add https://github.com/jospete/azure-activedirectory-library-for-cordova --save
