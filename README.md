@@ -10,20 +10,39 @@ bower install
 ## AD set up:
 ADAL-B2C configuration
 
+Create an Azure AD B2C Directory:
+https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-get-started
+Register a web application:
+https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-app-registration#register-a-web-application
+Register a mobile/native application:
+https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-app-registration#register-a-mobilenative-application
+Create a sign-up or sign-in policy:
+https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-policies#create-a-sign-up-or-sign-in-policy
+Create a password reset policy:
+https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-policies#create-a-password-reset-policy
+
 ## try the sample:
 Web App:
 ionic serve
 
 Mobile App:
 cordova platform add android
+ionic resources
 cordova build android
 
 ## Code explanation:
 Web App
 Mobile APp
 
+## Customize the Azure AD B2C user interface
+https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-ui-customization
+
+
 ## Related documents:
 
+Overview:
+https://azure.microsoft.com/en-us/services/active-directory-b2c/
+https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-overview
 
 Azure AD - Help secure AngularJS single-page apps by using Azure AD
 https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-devquickstarts-angular
