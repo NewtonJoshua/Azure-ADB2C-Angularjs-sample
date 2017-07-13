@@ -30,24 +30,30 @@ jwtHelper of [angular-jwt](https://github.com/auth0/angular-jwt) will take care 
 ADAL-B2C configuration
 
 1. [Create an Azure AD B2C Directory](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-get-started)
+
     Note the **_Domain name_**, it'll be used as the _tenantName_.
 2. [Register your application](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-app-registration)
     Follow the instructions to create an application and enable both Web App and Native client. Refer [Register a web application](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-app-registration#register-a-web-application) and [Register a mobile/native application](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-app-registration#register-a-mobilenative-application)
+
     Enter the _Reply URL_ as http://localhost:8100 or any port from wher you'll be serving your app.
+
     In _Application Claims_, select Email Addresses too.
+
     Note the **_Application ID_** . It'll be used as the _clientId_.
 3. [Create a sign-up or sign-in policy](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-policies#create-a-sign-up-or-sign-in-policy)
+
     Note the name of the policy. It'll be used as _policy_.
 4. [Create a password reset policy](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-policies#create-a-password-reset-policy)
+
     Note the name of the policy. It'll be used as the _password-reset-policy_ 
 
 ## 3. AD settings:
 
-[ADB2C Tenant Management Blade](https://portal.azure.com/#blade/Microsoft_AAD_B2CAdmin/TenantManagementBlade)
-tenantName: Domain name
-clientId: Application ID
-policy: 
-NewtonJoshuaSample.onmicrosoft.com
+In [settings.value.js](https://github.com/NewtonJoshua/Azure-ADB2C-Angularjs-sample/blob/master/www/js/settings.value.js), enter the following values
+
+* tenantName: Domain name from step 2.1
+* clientId: Application ID from step 2.2
+* policy: policy name from step 2.3
 
 ## 4. Run this sample:
 ### Web App:
@@ -58,11 +64,15 @@ From your shell or command line run
 ### Mobile App:
 
 1. Add platforms
+
 `cordova platform add android`
+
 `cordova platform add ios`
 2. Generate icon and splash screen resources
+
 `ionic cordova resources`
 3. Build the App
+ 
 `cordova build`
 
 For more details on building the apps refer the [Cordova](https://cordova.apache.org/) [documentions](https://cordova.apache.org/docs/en/latest/guide/overview/index.html), [Android Platform Guide](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html) and [iOS Platform Guide](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/)
@@ -70,9 +80,10 @@ For more details on building the apps refer the [Cordova](https://cordova.apache
 ## 5. Customize the Azure AD B2C user interface
 
 The Azure AD B2C login screen can be customized to suit our branding. Refer [Customizing the UI](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-ui-customization)
+
 In this sample we have two customized UI screens,
-    * AD B2C Sign in ansd Sign up page: adCustomPages/unified.html
-    * AD B2C Password reset page: adCustomPages/resetpassword.html
+* AD B2C Sign in ansd Sign up page: adCustomPages/unified.html
+* AD B2C Password reset page: adCustomPages/resetpassword.html
 
 In adCustomPages/unified.html, at line 442 and 445, enter your tenantName, password-reset-policy and clientId
 
@@ -90,14 +101,20 @@ If you have to build an application based on this sample remember to install the
 
 ### Web App
 Dependencies:
+
 `bower install ng-hello --save`
+
 `bower install angular-jwt --save`
+
 refer [hello.service.js](https://github.com/NewtonJoshua/Azure-ADB2C-Angularjs-sample/blob/master/www/js/hello.service.js)
 
 ### Mobile App
 Dependencies:
+
 `cordova plugin add https://github.com/jospete/azure-activedirectory-library-for-cordova --save`
+
 `bower install angular-jwt --save`
+
 refer [adal.service.js](https://github.com/NewtonJoshua/Azure-ADB2C-Angularjs-sample/blob/master/www/js/adal.service.js)
 
 
