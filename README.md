@@ -65,15 +65,17 @@ From your shell or command line run
 
 1. Add platforms
 
-`cordova platform add android`
+  `cordova platform add android`
 
-`cordova platform add ios`
+  `cordova platform add ios`
+
 2. Generate icon and splash screen resources
 
-`ionic cordova resources`
+  `ionic cordova resources`
+
 3. Build the App
  
-`cordova build`
+  `cordova build`
 
 For more details on building the apps refer the [Cordova](https://cordova.apache.org/) [documentions](https://cordova.apache.org/docs/en/latest/guide/overview/index.html), [Android Platform Guide](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html) and [iOS Platform Guide](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/)
 
