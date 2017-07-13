@@ -8,3 +8,4 @@ www/lib/
 resources/android/
 resources/ios/
 www/js/settings.value.js
+package-lock.json
