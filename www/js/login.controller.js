@@ -65,7 +65,7 @@ angular
             var data = jwtHelper.decodeToken(user.token);
             user.expires_in = new Date(response.expires * 1000) || response.expiresOn;
             user.name = data.name;
-            user.email = data.emails[0];
+            user.email = data.emails ? data.emails[0] : '';
             user.id = data.oid;
             return user;
         };
